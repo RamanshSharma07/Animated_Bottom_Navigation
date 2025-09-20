@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Animated Bottom Navigation"
 include(":app")
- 
+include(":animated-nav-bar")

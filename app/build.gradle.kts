@@ -59,4 +59,7 @@ dependencies {
 
     //Navigation
     implementation(libs.androidx.navigation.compose)
+
+    //For using project
+    implementation(project(":animated-nav-bar"))
 }
