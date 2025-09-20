@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.sp
 fun AnimatedNavItem(item: BottomNavItem, isSelected: Boolean, onClick: () -> Unit) {
     // Animate the vertical offset in Dp
     val offsetY by animateDpAsState(
-        targetValue = if (isSelected) (-35).dp else 0.dp,
+        targetValue = if (isSelected) (-40).dp else 0.dp,
         animationSpec = tween(durationMillis = 300),
         label = "offsetYAnimation"
     )
@@ -37,17 +37,21 @@ fun AnimatedNavItem(item: BottomNavItem, isSelected: Boolean, onClick: () -> Uni
 
     // Animate colors
     val iconColor by animateColorAsState(
-        targetValue = if (isSelected) Color.White else Color.Gray,
+//        targetValue = if (isSelected) Color.White else Color.Gray,
+//        targetValue = if (isSelected) Color(red = 238f, green = 217f, blue = 196f) else Color.Gray,
+        targetValue = Color(0xFFeed9c4),
         animationSpec = tween(durationMillis = 300),
         label = "iconColorAnimation"
     )
     val circleColor by animateColorAsState(
-        targetValue = if (isSelected) Color(0xFF009688) else Color.Transparent,
+//        targetValue = if (isSelected) Color(0xFF009688) else Color.Transparent,
+//        targetValue = if (isSelected) Color(red = 35f, green = 0f, blue = 0f) else Color.Transparent,
+        targetValue = if (isSelected) Color(0xFF550000) else Color.Transparent,
         animationSpec = tween(durationMillis = 300),
         label = "circleColorAnimation"
     )
     val textColor by animateColorAsState(
-        targetValue = if (isSelected) Color.White else Color.Transparent,
+        targetValue = if (isSelected) Color(0xFFeed9c4) else Color.Transparent,
 //        targetValue = if (isSelected) Color(0xFF9C27B0) else Color.Transparent,
         animationSpec = tween(durationMillis = 300),
         label = "textColorAnimation"
@@ -62,6 +66,7 @@ fun AnimatedNavItem(item: BottomNavItem, isSelected: Boolean, onClick: () -> Uni
             .graphicsLayer {
                 this.translationY = offsetY_in_pixels
             }
+//            .padding(bottom = 8.dp)
     ) {
         // KEY CHANGE 2: The Box for the icon is now inside the Column.
         // It's responsible for the circular background.
@@ -87,7 +92,10 @@ fun AnimatedNavItem(item: BottomNavItem, isSelected: Boolean, onClick: () -> Uni
             text = item.label,
             color = textColor,
             fontSize = 12.sp,
-            modifier = Modifier.padding(top = 4.dp)
+            modifier = Modifier.padding(
+                top = 10.dp,
+//                bottom = 2.dp
+            )
         )
     }
 }

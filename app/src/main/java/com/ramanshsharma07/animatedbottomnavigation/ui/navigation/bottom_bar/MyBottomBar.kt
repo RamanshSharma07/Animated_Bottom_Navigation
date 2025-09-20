@@ -58,10 +58,11 @@ fun MyBottomBar(navController: NavHostController) {
             modifier = Modifier
                 .fillMaxWidth()
 //                .height(65.dp)
-                .height(80.dp)
+                .height(90.dp)
                 .shadow(elevation = 8.dp, shape = bottomBarShape),
             shape = bottomBarShape,
-            color = Color(0xFF2C2C2C)
+//            color = Color(0xFF2C2C2C)
+            color = Color(0xFF550000)
         ) {}
 
         // This Row contains the icons and is drawn ON TOP of the Surface.
@@ -69,8 +70,8 @@ fun MyBottomBar(navController: NavHostController) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(80.dp)
-                .padding(bottom = 5.dp),
+                .height(80.dp),
+//                .padding(bottom = 2.dp),
             horizontalArrangement = Arrangement.SpaceAround,
             verticalAlignment = Alignment.CenterVertically
         ) {
