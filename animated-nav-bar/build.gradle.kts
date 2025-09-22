@@ -73,3 +73,17 @@ dependencies {
 
 //    implementation(libs.androidx.compose.compiler.compiler)
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+
+                groupId = "com.github.RamanshSharma07"
+                artifactId = "Animated_Bottom_Navigation"
+                version = "v1.0.1"
+            }
+        }
+    }
+}
