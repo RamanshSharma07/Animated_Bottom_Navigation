@@ -28,7 +28,10 @@ Add the dependency to your app's build.gradle.kts file. Remember to replace Your
 
 Kotlin
 dependencies {
-    implementation 'com.github.RamanshSharma07:Animated_Bottom_Navigation:v1.0.1'
+    implementation("com.github.RamanshSharma07:Animated_Bottom_Navigation:v1.0.1")
+
+    val nav_version = "2.9.4"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 }
 ## 💻 Usage
 Using the component is simple. Create a list of NavBarItems and pass it along with your NavController to the AnimatedBottomNavBar composable, typically inside a Scaffold.
